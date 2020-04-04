@@ -1,0 +1,15 @@
+#Encontra o maior valor na posição de memória compreendida entre 0100H a 010FH, armazenando o valor na posição: 0200H - Utilizando o Z80
+        LD HL, 0100H
+    	  LD A, 0
+        LD C, 15
+VOLTA:  CP (HL)
+   	    JP P, SALTO
+      	LD A, (HL)
+SALTO:  INC HL
+   	    DEC C
+   	    JP NZ, VOLTA
+    	  LD HL, 0200H
+    	  LD (HL), A
+    	  HALT
+        
+        
