@@ -8,6 +8,7 @@ COPY: 	LD A,(HL)
 	LD (DE),A
 	INC HL
 	INC DE
-	DEC BC 
+	DEC B
+	DEC C
 	JP NZ, COPY
 	RET
